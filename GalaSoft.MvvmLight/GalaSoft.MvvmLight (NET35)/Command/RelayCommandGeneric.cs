@@ -39,9 +39,9 @@ namespace GalaSoft.MvvmLight.Command
     //// [ClassInfo(typeof(RelayCommand)]
     public class RelayCommand<T> : ICommand
     {
-        private readonly WeakAction<T> _execute;
+        private readonly Action<T> _execute;
 
-        private readonly WeakFunc<T, bool> _canExecute;
+        private readonly Func<T, bool> _canExecute;
 
         /// <summary>
         /// Initializes a new instance of the RelayCommand class that 
@@ -67,12 +67,8 @@ namespace GalaSoft.MvvmLight.Command
                 throw new ArgumentNullException("execute");
             }
 
-            _execute = new WeakAction<T>(execute);
-
-            if (canExecute != null)
-            {
-                _canExecute = new WeakFunc<T,bool>(canExecute);
-            }
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
 #if SILVERLIGHT
@@ -171,22 +167,17 @@ namespace GalaSoft.MvvmLight.Command
                 return true;
             }
 
-            if (_canExecute.IsStatic || _canExecute.IsAlive)
-            {
-                if (parameter == null
+            if (parameter == null
 #if NETFX_CORE
-                    && typeof(T).GetTypeInfo().IsValueType)
+                && typeof(T).GetTypeInfo().IsValueType)
 #else
-                    && typeof(T).IsValueType)
+                && typeof(T).IsValueType)
 #endif
-                {
-                    return _canExecute.Execute(default(T));
-                }
-
-                return _canExecute.Execute((T) parameter);
+            {
+                return _canExecute(default(T));
             }
 
-            return false;
+            return _canExecute((T) parameter);
         }
 
         /// <summary>
@@ -209,28 +200,20 @@ namespace GalaSoft.MvvmLight.Command
             }
 #endif
 
-            if (CanExecute(val)
-                && _execute != null
-                && (_execute.IsStatic || _execute.IsAlive))
+            if (CanExecute(val) && _execute != null)
             {
-                if (val == null)
-                {
+                if (val == null
 #if NETFX_CORE
-                    if (typeof(T).GetTypeInfo().IsValueType)
+                    && typeof(T).GetTypeInfo().IsValueType)
 #else
-                    if (typeof(T).IsValueType)
+                    && typeof(T).IsValueType)
 #endif
-                    {
-                        _execute.Execute(default(T));
-                    }
-                    else
-                    {
-                        _execute.Execute((T)val);
-                    }
+                {
+                    _execute(default(T));
                 }
                 else
                 {
-                    _execute.Execute((T)val);
+                    _execute((T)val);
                 }
             }
         }

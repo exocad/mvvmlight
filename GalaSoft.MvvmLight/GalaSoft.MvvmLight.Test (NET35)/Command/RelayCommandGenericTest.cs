@@ -215,24 +215,6 @@ namespace GalaSoft.MvvmLight.Test.Command
         }
 
         [TestMethod]
-        public void TestReleasingTargetForCanExecuteGeneric()
-        {
-            _tempoInstance = new TemporaryClass();
-            _reference = new WeakReference(_tempoInstance);
-
-            TestCommand = new RelayCommand<string>(
-                _tempoInstance.SetContent,
-                _tempoInstance.CheckEnabled);
-
-            Assert.IsTrue(_reference.IsAlive);
-
-            _tempoInstance = null;
-            GC.Collect();
-
-            Assert.IsFalse(_reference.IsAlive);
-        }
-
-        [TestMethod]
         public void TestReleasingTargetForCanExecuteGenericPrivate()
         {
             _tempoInstance = new TemporaryClass();
@@ -255,23 +237,6 @@ namespace GalaSoft.MvvmLight.Test.Command
             _reference = new WeakReference(_tempoInstance);
 
             _tempoInstance.CreateCommandGenericCanExecuteInternal();
-
-            Assert.IsTrue(_reference.IsAlive);
-
-            _tempoInstance = null;
-            GC.Collect();
-
-            Assert.IsFalse(_reference.IsAlive);
-        }
-
-        [TestMethod]
-        public void TestReleasingTargetForExecuteGeneric()
-        {
-            _tempoInstance = new TemporaryClass();
-            _reference = new WeakReference(_tempoInstance);
-
-            TestCommand = new RelayCommand<string>(
-                _tempoInstance.SetContent);
 
             Assert.IsTrue(_reference.IsAlive);
 

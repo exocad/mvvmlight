@@ -42,9 +42,9 @@ namespace GalaSoft.MvvmLight.Command
     ////  Email = "laurent@galasoft.ch")]
     public class RelayCommand : ICommand
     {
-        private readonly WeakAction _execute;
+        private readonly Action _execute;
 
-        private readonly WeakFunc<bool> _canExecute;
+        private readonly Func<bool> _canExecute;
 
         /// <summary>
         /// Initializes a new instance of the RelayCommand class that 
@@ -70,12 +70,8 @@ namespace GalaSoft.MvvmLight.Command
                 throw new ArgumentNullException("execute");
             }
 
-            _execute = new WeakAction(execute);
-
-            if (canExecute != null)
-            {
-                _canExecute = new WeakFunc<bool>(canExecute);
-            }
+            _execute = execute;
+            _canExecute = canExecute;
         }
 
 #if SILVERLIGHT
@@ -168,9 +164,7 @@ namespace GalaSoft.MvvmLight.Command
         /// <returns>true if this command can be executed; otherwise, false.</returns>
         public bool CanExecute(object parameter)
         {
-            return _canExecute == null 
-                || (_canExecute.IsStatic || _canExecute.IsAlive) 
-                    && _canExecute.Execute();
+            return _canExecute == null || _canExecute();
         }
 
         /// <summary>
@@ -179,11 +173,9 @@ namespace GalaSoft.MvvmLight.Command
         /// <param name="parameter">This parameter will always be ignored.</param>
         public virtual void Execute(object parameter)
         {
-            if (CanExecute(parameter)
-                && _execute != null
-                && (_execute.IsStatic || _execute.IsAlive))
+            if (CanExecute(parameter) && _execute != null)
             {
-                _execute.Execute();
+                _execute();
             }
         }
     }

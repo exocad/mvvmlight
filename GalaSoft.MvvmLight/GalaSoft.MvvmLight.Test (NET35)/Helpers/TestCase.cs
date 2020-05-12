@@ -9,6 +9,7 @@
         InternalStaticMethod,
         PrivateStaticMethod,
         AnonymousMethod,
+        AnonymousMethodWithClosure,
         AnonymousStaticMethod,
     }
 }

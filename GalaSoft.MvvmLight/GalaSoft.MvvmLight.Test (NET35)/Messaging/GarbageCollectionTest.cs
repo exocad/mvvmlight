@@ -220,6 +220,30 @@ namespace GalaSoft.MvvmLight.Test.Messaging
 #endif
         }
 
+        // Lambdas with closures will be collected even if the "owning" object still lives
+        [TestMethod]
+        public void TestGarbageCollectionForAnonymousMethodWithClosure()
+        {
+            Messenger.Reset();
+
+            _recipient = new TestRecipient(WeakActionTestCase.AnonymousMethodWithClosure);
+
+            Assert.AreEqual(null, _recipient.Content);
+
+            const string message = "Hello world";
+            const string message2 = "Bye world";
+
+            Messenger.Default.Send(message);
+
+            Assert.AreEqual(message, _recipient.Content);
+
+            GC.Collect();
+
+            Messenger.Default.Send(message2);
+
+            Assert.AreNotEqual(message2, _recipient.Content);
+        }
+
         [TestMethod]
         public void TestGarbageCollectionForAnonymousStaticMethod()
         {
@@ -797,6 +821,11 @@ namespace GalaSoft.MvvmLight.Test.Messaging
                         Messenger.Default.Register<string>(
                             this,
                             msg => Content = msg);
+                        break;
+                    case WeakActionTestCase.AnonymousMethodWithClosure:
+                        Messenger.Default.Register<string>(
+                            this,
+                            msg => Content = testCase == WeakActionTestCase.AnonymousMethodWithClosure ? msg : "");
                         break;
                     case WeakActionTestCase.AnonymousStaticMethod:
                         Messenger.Default.Register<string>(

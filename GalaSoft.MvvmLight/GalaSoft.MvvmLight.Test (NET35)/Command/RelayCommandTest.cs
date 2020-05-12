@@ -174,40 +174,5 @@ namespace GalaSoft.MvvmLight.Test.Command
 
             Assert.AreEqual(executed, _dummyStatic);
         }
-
-        [TestMethod]
-        public void TestReleasingTargetForCanExecute()
-        {
-            _tempoInstance = new TemporaryClass();
-            _reference = new WeakReference(_tempoInstance);
-
-            TestCommand = new RelayCommand(
-                _tempoInstance.SetContent,
-                _tempoInstance.CheckEnabled);
-
-            Assert.IsTrue(_reference.IsAlive);
-
-            _tempoInstance = null;
-            GC.Collect();
-
-            Assert.IsFalse(_reference.IsAlive);
-        }
-
-        [TestMethod]
-        public void TestReleasingTargetForExecute()
-        {
-            _tempoInstance = new TemporaryClass();
-            _reference = new WeakReference(_tempoInstance);
-
-            TestCommand = new RelayCommand(
-                _tempoInstance.SetContent);
-
-            Assert.IsTrue(_reference.IsAlive);
-
-            _tempoInstance = null;
-            GC.Collect();
-
-            Assert.IsFalse(_reference.IsAlive);
-        }
     }
 }
