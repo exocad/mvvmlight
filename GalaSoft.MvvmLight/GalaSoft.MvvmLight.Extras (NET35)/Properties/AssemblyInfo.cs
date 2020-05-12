@@ -26,12 +26,12 @@ using System.Windows.Markup;
 #endif
 #endif
 
-[assembly: AssemblyTitle("GalaSoft.MvvmLight.Extras")]
+[assembly: AssemblyTitle("GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion")]
 [assembly: AssemblyDescription("Extras components to implement Model-View-ViewModel applications in WPF, Silverlight and Windows Phone 7")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GalaSoft Laurent Bugnion @ http://www.galasoft.ch")]
-[assembly: AssemblyProduct("GalaSoft.MvvmLight.Extras")]
-[assembly: AssemblyCopyright("Copyright © GalaSoft Laurent Bugnion 2009-2013")]
+[assembly: AssemblyCompany("exocad GmbH based on work of GalaSoft Laurent Bugnion @ http://www.galasoft.ch")]
+[assembly: AssemblyProduct("GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion")]
+[assembly: AssemblyCopyright("Copyright © exocad GmbH 2020, GalaSoft Laurent Bugnion 2009-2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -46,4 +46,5 @@ using System.Windows.Markup;
 [assembly:NeutralResourcesLanguage("en-US")]
 
 [assembly: AssemblyVersion("4.2.30.*")]
+[assembly: AssemblyInformationalVersion("4.2.30-exo-v1")]
 ////[assembly: AssemblyFileVersion("4.2.30.0/BL0030")]
