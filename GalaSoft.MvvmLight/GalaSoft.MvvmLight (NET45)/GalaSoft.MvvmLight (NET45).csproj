@@ -126,6 +126,7 @@
     <Compile Include="..\GalaSoft.MvvmLight %28NET35%29\ViewModelBase.cs">
       <Link>ViewModelBase.cs</Link>
     </Compile>
+    <Compile Include="Helpers\RuntimeEnvironment.cs" />
     <Compile Include="Properties\AssemblyInfo.Net45.cs" />
   </ItemGroup>
   <ItemGroup>

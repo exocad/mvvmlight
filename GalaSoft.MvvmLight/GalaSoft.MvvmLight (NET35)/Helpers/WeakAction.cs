@@ -15,6 +15,7 @@
 // ****************************************************************************
 
 using System;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
@@ -167,6 +168,8 @@ namespace GalaSoft.MvvmLight.Helpers
                 return;
             }
 
+            ShowErrorIfClosure(action);
+
 #if SILVERLIGHT
             if (!action.Method.IsPublic
                 || (action.Target != null
@@ -201,6 +204,31 @@ namespace GalaSoft.MvvmLight.Helpers
 #endif
 
             Reference = new WeakReference(target);
+        }
+
+#pragma warning disable 1591
+        protected void ShowErrorIfClosure(Delegate action)
+#pragma warning restore 1591
+        {
+            var type = action.Target.GetType();
+            if (type.Name.StartsWith("<>") && type.Name.Contains("DisplayClass"))
+            {
+                var message = "The supplied action looks to be a lambda closure. Do not supply lambda closures to a WeakAction as it will likely be collected by the Garbage Collector right away and therefore not work as expected.";
+                if (RuntimeEnvironment.IsDebug)
+                {
+                    throw new ArgumentException(message);
+                }
+                else
+                {
+                    Trace.Write(message + "\n" + Environment.StackTrace);
+
+                    if (Debugger.IsAttached)
+                    {
+                        // When your debugger has stopped here, read the message above and check the registration that led you here
+                        Debugger.Break();
+                    }
+                }
+            }
         }
 
         /// <summary>

@@ -15,7 +15,6 @@
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 
 namespace GalaSoft.MvvmLight.Helpers
 {
@@ -132,6 +131,8 @@ namespace GalaSoft.MvvmLight.Helpers
 
                 return;
             }
+
+            ShowErrorIfClosure(action);
 
 #if SILVERLIGHT
             if (!action.Method.IsPublic
