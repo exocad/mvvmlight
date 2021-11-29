@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Title>GalaSoft.MvvmLight.Extras</Title>
+    <Description>Extras components to implement Model-View-ViewModel applications in WPF, Windows Store, Windows Phone, Silverlight, Xamarin.</Description>
+    <Company>GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
+    <Product>GalaSoft.MvvmLight.Extras</Product>
+    <Copyright>Copyright © GalaSoft Laurent Bugnion 2009-2018</Copyright>
+  </PropertyGroup>
+  <PropertyGroup>
+    <UseWPF>true</UseWPF>
+    <ProjectGuid>{29996309-102D-4D87-B4FE-897EB02335FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GalaSoft.MvvmLight</RootNamespace>
+    <AssemblyName>GalaSoft.MvvmLight.Extras</AssemblyName>
+    <TargetFrameworks>net6.0-windows</TargetFrameworks>
+    <FileAlignment>512</FileAlignment>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NEWLOCATOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GalaSoft.MvvmLight.Extras.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NEWLOCATOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GalaSoft.MvvmLight.Extras.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GalaSoft.MvvmLight.Extras %28NET6%29.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\GalaSoft.MvvmLight %28PCL%29\Helpers\DesignerPlatformLibrary.cs">
+      <Link>Helpers\DesignerPlatformLibrary.cs</Link>
+    </Compile>
+    <Compile Include="..\GalaSoft.MvvmLight.Extras %28PCL%29\Ioc\ISimpleIoc.cs">
+      <Link>Ioc\ISimpleIoc.cs</Link>
+    </Compile>
+    <Compile Include="..\GalaSoft.MvvmLight.Extras %28PCL%29\Ioc\PreferredConstructor.cs">
+      <Link>Ioc\PreferredConstructor.cs</Link>
+    </Compile>
+    <Compile Include="..\GalaSoft.MvvmLight.Extras %28PCL%29\Ioc\SimpleIoc.cs">
+      <Link>Ioc\SimpleIoc.cs</Link>
+    </Compile>
+    <Compile Include="..\GalaSoft.MvvmLight.Platform %28NET45%29\Command\EventToCommand.cs">
+      <Link>Command\EventToCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\GalaSoft.MvvmLight.Platform %28NET45%29\Command\IEventArgsConverter.cs">
+      <Link>Command\IEventArgsConverter.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.Net6.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\GalaSoft.MvvmLight %28PCL%29\License.txt">
+      <Link>License.txt</Link>
+    </None>
+    <None Include="GalaSoft.MvvmLight.Extras %28NET6%29.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CommonServiceLocator" Version="2.0.6" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\External\NET4\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
