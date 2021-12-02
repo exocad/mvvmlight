@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Company>GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
-    <Title>GalaSoft.MvvmLight</Title>
-    <Product>GalaSoft.MvvmLight</Product>
-    <Copyright>Copyright © GalaSoft Laurent Bugnion 2009-2018</Copyright>
-    <Version>5.4.1.0</Version>
+    <Company>exocad GmbH based on work of GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
+    <Title>GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Title>
+    <Product>GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Product>
+    <Copyright>Copyright © exocad GmbH 2020-2021, GalaSoft Laurent Bugnion 2009-2018</Copyright>
+    <Version>5.4.1.0-exo-v2</Version>
   </PropertyGroup>
   
   <PropertyGroup>

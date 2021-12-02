@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Title>GalaSoft.MvvmLight.Extras</Title>
+    <Title>GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Title>
     <Description>Extras components to implement Model-View-ViewModel applications in WPF, Windows Store, Windows Phone, Silverlight, Xamarin.</Description>
-    <Company>GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
-    <Product>GalaSoft.MvvmLight.Extras</Product>
-    <Copyright>Copyright © GalaSoft Laurent Bugnion 2009-2018</Copyright>
+    <Company>exocad GmbH based on work of GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
+    <Product>GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Product>
+    <Copyright>Copyright © exocad GmbH 2020-2021, GalaSoft Laurent Bugnion 2009-2018</Copyright>
+    <Version>5.4.1.0-exo-v2</Version>
   </PropertyGroup>
   <PropertyGroup>
     <UseWPF>true</UseWPF>

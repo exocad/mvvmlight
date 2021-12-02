@@ -17,12 +17,12 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("GalaSoft.MvvmLight")]
+[assembly: AssemblyTitle("GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion")]
 [assembly: AssemblyDescription("A lightweight framework to implement Model-View-ViewModel applications in WPF, Windows Store, Windows Phone, Silverlight, Xamarin.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("GalaSoft Laurent Bugnion @ http://www.galasoft.ch")]
-[assembly: AssemblyProduct("GalaSoft.MvvmLight")]
-[assembly: AssemblyCopyright("Copyright © GalaSoft Laurent Bugnion 2009-2018")]
+[assembly: AssemblyCompany("exocad GmbH based on work of GalaSoft Laurent Bugnion @ http://www.galasoft.ch")]
+[assembly: AssemblyProduct("GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion")]
+[assembly: AssemblyCopyright("Copyright © exocad GmbH 2020-2021, GalaSoft Laurent Bugnion 2009-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
