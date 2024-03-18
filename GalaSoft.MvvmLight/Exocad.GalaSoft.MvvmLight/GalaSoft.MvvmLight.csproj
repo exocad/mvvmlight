@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Title>GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Title>
+		<Product>GalaSoft.MvvmLight modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Product>
+		<Description>The main purpose of the toolkit is to accelerate the creation and development of MVVM applications.</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Exocad.GalaSoft.MvvmLight</PackageId>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<RootNamespace>GalaSoft.MvvmLight</RootNamespace>
+		<AssemblyName>GalaSoft.MvvmLight</AssemblyName>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>GalaSoft.MvvmLight.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(SolutionDir)../README.md" Pack="true" PackagePath="\" />
+		<None Include="$(SolutionDir)../LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

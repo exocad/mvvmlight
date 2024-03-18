@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Title>GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Title>
+		<Product>GalaSoft.MvvmLight.Extras modified by exocad GmbH originally based on work of GalaSoft Laurent Bugnion</Product>
+		<Description>Extras components to implement Model-View-ViewModel applications.</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Exocad.GalaSoft.MvvmLight.Extras</PackageId>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<UseWPF>true</UseWPF>
+		<RootNamespace>GalaSoft.MvvmLight</RootNamespace>
+		<AssemblyName>GalaSoft.MvvmLight.Extras</AssemblyName>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>GalaSoft.MvvmLight.Extras.snk</AssemblyOriginatorKeyFile>
+
+		<DefineConstants>$(DefineConstants);NEWLOCATOR</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="$(SolutionDir)../README.md" Pack="true" PackagePath="\" />
+		<None Include="$(SolutionDir)../LICENSE" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\Exocad.GalaSoft.MvvmLight\Helpers\DesignerPlatformLibrary.cs" Link="Helpers\DesignerPlatformLibrary.cs" />
+
+		<None Include="..\Exocad.GalaSoft.MvvmLight\License.txt" Link="License.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
+		<PackageReference Include="CommonServiceLocator" Version="2.0.7" />
+	</ItemGroup>
+</Project>
