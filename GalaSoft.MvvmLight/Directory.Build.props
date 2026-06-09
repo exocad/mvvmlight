@@ -1,10 +1,10 @@
 <Project>
 	<PropertyGroup>
-		<Copyright>Copyright © exocad GmbH 2020-2024 GalaSoft Laurent Bugnion 2009-2018</Copyright>
+		<Copyright>Copyright © exocad GmbH 2020-2026 GalaSoft Laurent Bugnion 2009-2018</Copyright>
 		<Company>exocad GmbH based on work of GalaSoft Laurent Bugnion @ http://www.galasoft.ch</Company>
-		<Version>5.4.1.0</Version>
+		<Version>5.4.2.0</Version>
 
-		<TargetFrameworks>net48;net6.0-windows;net8.0-windows</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
